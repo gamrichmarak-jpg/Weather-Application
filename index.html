@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">    
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <main>
+
+        <div class="navbar">
+            <span class="weather-icon"></span>
+            <button class="units"><span class="gear-icon"></span>Units<span class="arrow-down-icon"></span></button>
+            <ul class="units-list">
+                <button class="imperial-btn">Switch to Imperial</button>
+
+                <span class="unit-header">Temperature</span>
+                <li class="temperature-celcius">Celcius(°C) <span class="celcius-checkmark"></span></li>
+                <li class="temperature-fahrenheit">Fahrenheit(°F) <span class="fahrenheit-checkmark"></span></li>
+                 
+                <span class="unit-header">Wind Speed</span>
+                <li class="kilometer-unit">km/h <span class="km-checkmark"></span></li>
+                <li class="miles-unit">mph <span class="miles-checkmark"></span></li>
+            
+                <span class="unit-header">Precipitation</span>
+                <li class="millimeters">Millimeters(mm) <span class="mm-checkmark"></span></li>
+                <li class="inches">Inches(in) <span class="inches-checkmark"></span></li>
+            </ul>
+        </div>
+        
+        <div class="heading">
+            <h1>How's the sky looking today?</h1>
+        </div>
+
+        <form>
+            <div class="srch-container" tabindex="0"><span class="search-icon"></span><input type="text" placeholder="Search for a place..." id="search" autocomplete="off"></div>
+            <ul class="search-suggestion"></ul>
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+
+        <div class="container">
+        <div class="main-display">
+
+            <div class="card-1">
+             <span class="city-name"></span>
+             <small class="date"></small>
+            </div>
+
+            <div class="card-2">
+              <img class="sun-icon">
+              <span class="temperature"></span>
+            </div>
+            
+            <div class="loading-state">
+                <div class="dot-container">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                </div>
+
+                <div class="word-loading"><p>Loading...</p></div>
+            </div>
+        </div>
+
+        <div class="hourly-forecast">
+
+            <div class="header-container">
+            <span>Hourly forecast</span>
+             <button class="week-dropdown">
+                <span class="selected-day"></span>
+                <span class="arrow-down-icon"></span>
+            </button>
+             <ul>
+                </ul>
+            </div>
+
+            <div class="hours-cards">
+                <div class="eight-hours-card">
+                    <div class="hour-item"><img class="eight-hours-icon"><span class="time"></span></div> 
+                    <span class="eight-hours-temperature"></span>
+                </div>
+                
+                <div class="eight-hours-card">
+                    <div class="hour-item"><img class="eight-hours-icon"><span class="time"></span></div> 
+                    <span class="eight-hours-temperature"></span>
+                </div>
+
+                <div class="eight-hours-card">
+                    <div class="hour-item"><img class="eight-hours-icon"><span class="time"></span></div>
+                     <span class="eight-hours-temperature"></span>
+                    </div>
+
+                <div class="eight-hours-card">
+                    <div class="hour-item"><img class="eight-hours-icon"><span class="time"></span></div>
+                     <span class="eight-hours-temperature"></span>
+                    </div>
+
+                <div class="eight-hours-card">
+                    <div class="hour-item"><img class="eight-hours-icon"><span class="time"></span></div>
+                     <span class="eight-hours-temperature"></span>
+                    </div>
+
+                <div class="eight-hours-card">
+                    <div class="hour-item"><img class="eight-hours-icon"><span class="time"></span></div>
+                     <span class="eight-hours-temperature"></span>
+                    </div>
+
+                <div class="eight-hours-card">
+                    <div class="hour-item"><img class="eight-hours-icon"><span class="time"></span></div>
+                     <span class="eight-hours-temperature"></span>
+                    </div>
+
+                <div class="eight-hours-card">
+                    <div class="hour-item"><img class="eight-hours-icon"><span class="time"></span></div>
+                     <span class="eight-hours-temperature"></span>
+                    </div>
+                
+            </div>
+            <div class="loading-state-hours">
+                <div class="loading-hours"></div>
+                <div class="loading-hours"></div>
+                <div class="loading-hours"></div>
+                <div class="loading-hours"></div>
+                <div class="loading-hours"></div>
+                <div class="loading-hours"></div>
+                <div class="loading-hours"></div>
+                <div class="loading-hours"></div>
+            </div>
+        </div>
+
+        <div class="third-row">
+        <div class="degree-celcius-card">
+            <span class="feels-like">Feels like</span>
+            <span class="degree"></span>
+        </div>
+         <div class="humidity-card">
+            <span class="humidity">Humidity</span>
+             <span class="percentage"></span>
+        </div>
+         <div class="wind-card">
+         <span class="wind">Wind</span>
+          <span class="mph"></span>
+        </div>
+         <div class="precipitation-card">
+            <span class="precipitation">Precipitation</span>
+             <span class="in"></span>
+         </div>
+        </div>
+
+        <div class="daily-forecast-container">
+            <span class="daily-forecast-header">Daily forecast</span>
+            <div class="daily-forecast"></div>
+
+            <div class="dailyForecast-loading-state">
+            <div class="daily-loading"></div>
+            <div class="daily-loading"></div>
+            <div class="daily-loading"></div>
+            <div class="daily-loading"></div>
+            <div class="daily-loading"></div>
+            <div class="daily-loading"></div>
+            <div class="daily-loading"></div>
+        </div>
+        </div>
+
+         <div class="no-result"><h4>No search result found!</h4></div>
+        </div>
+        </div>
+
+        <div class="error-section">
+           <div class="error-card">
+        <span class="error-icon"></span>
+        <h1 class="error-heading">Something went wrong</h1>
+        <p class="error-message">We couldn't connect to the server (API error). Please try<br> again in a few moments.</p>
+        <button class="retry-btn"><span class="retry-icon"></span>Retry</button>
+           </div>
+        </div>
+    </main>
+
+    <script src="weatherapp.js"></script>
+</body>
+</html>
