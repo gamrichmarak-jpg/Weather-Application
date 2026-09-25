@@ -37,7 +37,7 @@ main {
 }
 .weather-icon {
     display: inline-block;
-    background: url(logo.svg);
+    background: url(assets/icons/logo.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -66,7 +66,7 @@ main {
 }
 .gear-icon {
     display: inline-block;
-    background: url(icon-units.svg);
+    background: url(assets/icons/icon-units.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -75,7 +75,7 @@ main {
 }
 .arrow-down-icon {
     display: inline-block;
-    background: url(icon-dropdown.svg);
+    background: url(assets/icons/icon-dropdown.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -120,7 +120,7 @@ form {
 }
 .search-icon {
     display: inline-block;
-    background: url(icon-search.svg);
+    background: url(assets/icons/icon-search.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -200,7 +200,7 @@ form {
     justify-content: space-around;
     align-items: center;
     grid-area: feature;
-    background: url(bg-today-large.svg);
+    background: url(assets/images/bg-today-large.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -557,7 +557,7 @@ ul {
   display: inline-block;
   width: 14px;
   height: 14px;
-  background: url(icon-checkmark.svg);
+  background: url(assets/icons/icon-checkmark.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -624,7 +624,7 @@ ul {
 }
 .error-icon {
     display: inline-block;
-    background: url(icon-error.svg);
+    background: url(assets/icons/icon-error.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -633,7 +633,7 @@ ul {
 }
 .retry-icon {
     display: inline-block;
-    background: url(icon-retry.svg);
+    background: url(assets/icons/icon-retry.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -731,7 +731,7 @@ main {
   grid-area: main;
   height: clamp(300px, 22vh, 340px);
   min-height: 280px;
-  background: url(bg-today-small.svg);
+  background: url(assets/images/bg-today-small.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

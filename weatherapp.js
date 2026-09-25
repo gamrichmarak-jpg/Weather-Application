@@ -455,41 +455,41 @@ imperialBtn.addEventListener("click", () => {
 // WEATHER CODE ICONS OBJECT
 function icons() {
   return {
-        0: "icon-sunny.webp",
+        0: "assets/images/icon-sunny.webp",
 
-        1: "icon-partly-cloudy.webp",
-        2: "icon-partly-cloudy.webp",
+        1: "assets/images/icon-partly-cloudy.webp",
+        2: "assets/images/icon-partly-cloudy.webp",
 
-        3: "icon-overcast.webp",
+        3: "assets/images/icon-overcast.webp",
 
-        45: "icon-fog.webp",
-        48: "icon-fog.webp",
+        45: "assets/images/icon-fog.webp",
+        48: "assets/images/icon-fog.webp",
+        
+        51: "assets/images/icon-drizzle.webp",
+        53: "assets/images/icon-drizzle.webp",
+        55: "assets/images/icon-drizzle.webp",
+        56: "assets/images/icon-drizzle.webp",
+        57: "assets/images/icon-drizzle.webp",
 
-        51: "icon-drizzle.webp",
-        53: "icon-drizzle.webp",
-        55: "icon-drizzle.webp",
-        56: "icon-drizzle.webp",
-        57: "icon-drizzle.webp",
+        61: "assets/images/icon-rain.webp",
+        63: "assets/images/icon-rain.webp",
+        65: "assets/images/icon-rain.webp",
+        66: "assets/images/icon-rain.webp",
+        67: "assets/images/icon-rain.webp",
+        80: "assets/images/icon-rain.webp",
+        81: "assets/images/icon-rain.webp",
+        82: "assets/images/icon-rain.webp",
 
-        61: "icon-rain.webp",
-        63: "icon-rain.webp",
-        65: "icon-rain.webp",
-        66: "icon-rain.webp",
-        67: "icon-rain.webp",
-        80: "icon-rain.webp",
-        81: "icon-rain.webp",
-        82: "icon-rain.webp",
+        71: "assets/images/icon-snow.webp",
+        73: "assets/images/icon-snow.webp",
+        75: "assets/images/icon-snow.webp",
+        77: "assets/images/icon-snow.webp",
+        85: "assets/images/icon-snow.webp",
+        86: "assets/images/icon-snow.webp",
 
-        71: "icon-snow.webp",
-        73: "icon-snow.webp",
-        75: "icon-snow.webp",
-        77: "icon-snow.webp",
-        85: "icon-snow.webp",
-        86: "icon-snow.webp",
-
-        95: "icon-storm.webp",
-        96: "icon-storm.webp",
-        99: "icon-storm.webp"
+        95: "assets/images/icon-storm.webp",
+        96: "assets/images/icon-storm.webp",
+        99: "assets/images/icon-storm.webp"
     };
 }
 
