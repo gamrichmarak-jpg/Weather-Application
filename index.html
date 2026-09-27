@@ -22,16 +22,16 @@
                 <button class="imperial-btn">Switch to Imperial</button>
 
                 <span class="unit-header">Temperature</span>
-                <li class="temperature-celcius">Celcius(°C) <span class="celcius-checkmark"></span></li>
-                <li class="temperature-fahrenheit">Fahrenheit(°F) <span class="fahrenheit-checkmark"></span></li>
+                <li class="temperature-celcius"><button class="for-units">Celcius(°C)</button><span class="celcius-checkmark"></span></li>
+                <li class="temperature-fahrenheit"><button class="for-units">Fahrenheit(°F)</button> <span class="fahrenheit-checkmark"></span></li>
                  
                 <span class="unit-header">Wind Speed</span>
-                <li class="kilometer-unit">km/h <span class="km-checkmark"></span></li>
-                <li class="miles-unit">mph <span class="miles-checkmark"></span></li>
+                <li class="kilometer-unit"><button class="for-units">km/h</button><span class="km-checkmark"></span></li>
+                <li class="miles-unit"><button class="for-units">mph</button><span class="miles-checkmark"></span></li>
             
                 <span class="unit-header">Precipitation</span>
-                <li class="millimeters">Millimeters(mm) <span class="mm-checkmark"></span></li>
-                <li class="inches">Inches(in) <span class="inches-checkmark"></span></li>
+                <li class="millimeters"><button class="for-units">Millimeters(mm)</button><span class="mm-checkmark"></span></li>
+                <li class="inches"><button class="for-units">Inches(in)</button><span class="inches-checkmark"></span></li>
             </ul>
         </div>
         
@@ -40,7 +40,7 @@
         </div>
 
         <form>
-            <div class="srch-container" tabindex="0"><span class="search-icon"></span><input type="text" placeholder="Search for a place..." id="search" autocomplete="off"></div>
+            <div class="srch-container"><span class="search-icon"></span><input type="text" placeholder="Search for a place..." id="search" autocomplete="off"></div>
             <ul class="search-suggestion"></ul>
             <button type="submit" class="search-btn">Search</button>
         </form>

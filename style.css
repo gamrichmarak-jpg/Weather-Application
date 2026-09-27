@@ -1,3 +1,11 @@
+:root {
+    --surface-color: hsl(243, 27%, 20%);
+    --bg-color: hsl(243, 96%, 9%);
+    --card-color: hsl(243, 23%, 24%);
+    --style-color: hsl(243, 23%, 30%);
+    --neutral-300-color: hsl(240, 6%, 70%);
+    --outline-color: hsl(250, 6%, 84%);
+}
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +16,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: hsl(243, 96%, 9%);
-    color: white;
+    background: var(--bg-color);
+    color: hsl(0, 0%, 100%);
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -51,10 +59,10 @@ main {
     margin-right: 5%;
     width: 80px;
     height: 28px;
-    background: hsl(243, 27%, 20%);
+    background: var(--surface-color);
     border: none;
     border-radius: 4px;
-    color: hsl(250, 6%, 84%);
+    color: var(--outline-color);
     font-size: 0.7rem;
     font-weight: 600;
 }
@@ -62,7 +70,7 @@ main {
     background: hsl(240, 6%, 44%);
 }
 .units:focus {
-    outline: 2px solid hsl(250, 6%, 84%);
+    outline: 2px solid var(--outline-color);
 }
 .gear-icon {
     display: inline-block;
@@ -104,19 +112,27 @@ form {
     height: 80px;
     position: relative;
 }
+.for-units {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border: none;
+    height: 100%;
+    background: var(--surface-color);
+    color: var(--outline-color);
+    cursor: pointer;
+}
 .srch-container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: hsl(243, 27%, 20%);
+    background: var(--surface-color);
     color: white;
     border: none;
     border-radius: 5px;
     width: 30%;
     height: 40px;
-}
-.srch-container:focus {
-    outline: 2px solid hsl(250, 6%, 84%);
 }
 .search-icon {
     display: inline-block;
@@ -128,10 +144,9 @@ form {
     height: 14px;
 }
 #search {
-    background: hsl(243, 27%, 20%);
+    background: var(--surface-color);
     color: white;
     border: none;
-    outline: none;
     border-radius: 5px;
     width: 85%;
     height: 40px;
@@ -155,7 +170,7 @@ form {
    display: none; 
    position: absolute;
    border: 1px solid black;
-   background: hsl(243, 27%, 20%);
+   background: var(--surface-color);
    top: 115%;
    right: 38.2%;
    padding: 4px 8px;
@@ -163,7 +178,7 @@ form {
    transition: 0.2s ease;
    border-radius: 6px;
    border: none;
-   box-shadow: 0px 0px 1px hsl(240, 6%, 70%);
+   box-shadow: 0px 0px 1px var(--neutral-300-color);
 }
 .active-suggestion {
     display:flex;
@@ -182,7 +197,7 @@ form {
     border-radius: 2px;
 }
 .suggestion:hover {
-    background: hsl(243, 23%, 30%);
+    background: var(--style-color);
 }
 .container {
     display: grid;
@@ -243,7 +258,7 @@ form {
     justify-content: center;
     align-items: center;
     gap: 8px;
-    background: hsl(243, 27%, 20%);
+    background: var(--surface-color);
     width: 100%;
     height: 100%;
 }
@@ -252,7 +267,7 @@ form {
     flex-direction: column;
     align-items: center;
     grid-area: menu;
-    background: hsl(243, 27%, 20%);
+    background: var(--surface-color);
     border-radius: 12px;
     margin-left: 10px;
 }
@@ -289,7 +304,7 @@ form {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    background:hsl(243, 27%, 20%);
+    background: var(--surface-color);
     margin-top: 15px;
     width: 135px;
     height: 90px;
@@ -300,7 +315,7 @@ form {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background: hsl(243, 27%, 20%);
+    background: var(--surface-color);
     width: 70px;
     height: 110px;
     border-radius: 10px;
@@ -310,7 +325,7 @@ form {
 .day-name {
     margin-top: 8px;
     font-size: 0.8rem;
-    color: hsl(250, 6%, 84%);
+    color: var(--outline-color);
 }
 .dailyForecast-loading-state {
     display: none;
@@ -326,7 +341,7 @@ form {
     width: 100%;
 }
 .daily-loading {
-    background: hsl(243, 27%, 20%);
+    background: var(--surface-color);
     width: 70px;
     height: 110px;
     border-radius: 10px;
@@ -353,7 +368,7 @@ form {
 }
 .date {
     font-size: 0.750rem;
-    color: hsl(250, 6%, 84%);
+    color: var(--outline-color);
 }
 .card-1 {
     display: flex;
@@ -388,13 +403,13 @@ form {
     font-size: 0.9rem;
     margin-left: 15px;
     margin-top: 5px;
-    color: hsl(240, 6%, 70%);
+    color: var(--neutral-300-color);
 }
 .week-dropdown {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: hsl(243, 23%, 30%);
+    background: var(--style-color);
     color: hsl(0, 0%, 100%);
     width: 90px;
     height: 28px;
@@ -406,7 +421,7 @@ form {
     background: hsl(240, 9%, 43%);
 }
 .week-dropdown:focus{
-    outline: 1px solid hsl(250, 6%, 84%);
+    outline: 1px solid var(--outline-color);
 }
 ul {
    display: none; 
@@ -419,7 +434,7 @@ ul {
    transition: 0.2s ease;
    border-radius: 6px;
    border: none;
-   box-shadow: 0px 0px 1px hsl(240, 6%, 70%);
+   box-shadow: 0px 0px 1px var(--neutral-300-color);
 }
 .active {
    display: flex;
@@ -430,8 +445,8 @@ ul {
    width: 140px;
    height: 210px;
    transition: 0.2s ease;
-   background: hsl(243, 27%, 20%);
-   color: hsl(250, 6%, 84%);
+   background: var(--surface-color);
+   color: var(--outline-color);
 }
 .weekdays {
     display: flex;
@@ -444,7 +459,7 @@ ul {
     border-radius: 2px;
 }
 .weekdays:hover {
-    background: hsl(243, 23%, 30%);
+    background: var(--style-color);
     cursor: pointer;
 }
 .hours-cards {
@@ -462,7 +477,7 @@ ul {
     width: 90%;
     height: 45px;
     border-radius: 10px;
-    background: hsl(243, 23%, 24%);
+    background: var(--card-color);
     font-size: 0.9rem;
 }
 .hour-item {
@@ -498,7 +513,7 @@ ul {
     width: 90%;
     height: 45px;
     border-radius: 10px;
-    background: hsl(243, 23%, 24%);
+    background: var(--card-color);
 }
 .units-list {
     display: none;
@@ -510,7 +525,7 @@ ul {
     margin: 0;
     transition: 0.2s ease;
     border-radius: 3px; 
-    box-shadow: 0px 0px 1px hsl(240, 6%, 70%);
+    box-shadow: 0px 0px 1px var(--neutral-300-color);
     z-index: 9999;
 }
 .isActive {
@@ -523,7 +538,7 @@ ul {
     width: 160px;
     min-height: 320px;
     padding: 5px 10px;
-    background: hsl(243, 27%, 20%);
+    background: var(--surface-color);
     color: hsl(0, 0%, 100%);
     cursor: pointer;
     border: none;
@@ -534,7 +549,7 @@ ul {
     margin-left: 0;
     text-align: left;
     border: none;
-    background: hsl(243, 27%, 20%);
+    background: var(--surface-color);
     color: rgb(218, 208, 208);
     width: 100%;
     border-radius: 6px;
@@ -543,10 +558,10 @@ ul {
     font-size: 0.8rem;
 }
 .imperial-btn:hover {
-    background: hsl(243, 23%, 24%);
+    background: var(--card-color);
 }
 .imperial-btn:focus {
-    outline: 1px solid hsl(250, 6%, 84%);
+    outline: 1px solid var(--outline-color)
 }
 .unit-header {
     width: 100%;
@@ -572,8 +587,7 @@ ul {
     border-radius: 4px;
 }
 .temperature-fahrenheit, .miles-unit {
-   border-bottom: 1px solid hsl(243, 23%, 30%);
-   padding-bottom: 10px
+   border-bottom: 1px solid var(--style-color);
 }
 .kilometer-unit, .miles-unit {
     display: flex;
@@ -592,7 +606,7 @@ ul {
     height: 30px;
 }
 .temperature-celcius:hover, .temperature-fahrenheit:hover, .kilometer-unit:hover, .miles-unit:hover, .millimeters:hover, .inches:hover {
-  background: hsl(243, 23%, 24%);
+  background: var(--card-color);
 }
 .no-result {
     display: none;
@@ -605,14 +619,14 @@ ul {
     justify-content: center;
     width: 100%;
     height: 100%;
-    background: hsl(243, 96%, 9%);
+    background: var(--bg-color);
 }
 .container.active .no-result {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
-    background: hsl(243, 96%, 9%);
+    background: var(--bg-color);
     color: white;
 }
 .error-heading {
@@ -644,8 +658,8 @@ ul {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: hsl(243, 27%, 20%);
-    color: hsl(250, 6%, 84%);
+    background: var(--surface-color);
+    color: var(--outline-color);
     width: 65px;
     height: 30px;
     border: none;
@@ -654,15 +668,15 @@ ul {
     cursor: pointer;
 }
 .retry-btn:hover {
-    background: hsl(243, 23%, 30%);
+    background: var(--style-color);
 }
 .retry-btn:focus {
-    outline: 2px solid hsl(250, 6%, 84%);
+    outline: 2px solid var(--outline-color);
 }
 .error-message {
     font-size: 0.9rem;
     text-align: center;
-    color: hsl(240, 6%, 70%);
+    color: var(--neutral-300-color);
 }
 .error-section {
     display: none;
@@ -679,7 +693,7 @@ main.error .error-section {
  gap: 8px;
  width: 100%;
  height: 100%;
- background: hsl(243, 96%, 9%);
+ background: var(--bg-color);
 }
 .error-card {
  display: flex;
@@ -691,10 +705,10 @@ main.error .error-section {
  gap: 5px;
 }
 .active-theme {
- background: hsl(243, 23%, 30%);
+ background: var(--style-color);
 }
 .active-units {
-   background: hsl(243, 23%, 24%);
+   background: var(--card-color);
 }
 
 @media (max-width: 600px) {
@@ -796,7 +810,7 @@ main {
 }
 .temp-max-min-parent {
     font-size: 0.8rem;
-    color: hsl(250, 6%, 84%);
+    color: var(--outline-color);
 }
 .hourly-forecast {
     grid-area: hourly;
@@ -827,7 +841,7 @@ form {
 }
 .eight-hours-temperature {
     font-size: 0.8rem;
-    color: hsl(250, 6%, 84%);
+    color: var(--outline-color);
 }
 .week-dropdown {
     height: 31px;

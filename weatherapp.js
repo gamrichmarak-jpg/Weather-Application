@@ -237,7 +237,7 @@ async function fetchWeatherData(city) {
     cityName.textContent = `${weatherObj.weatherCity_data.results[longLat.position].name}, ${weatherObj.weatherCity_data.results[longLat.position].country ? weatherObj.weatherCity_data.results[longLat.position].country : countryName}`;
     date.textContent = new Date().toLocaleString(["en-US"], { weekday: "long", year: "numeric", month: "short", day: "numeric" });
 
-    currentTemperature.textContent = `${Math.round(temperature_unit)}°`;
+    currentTemperature.textContent = `${Math.round(temperature_unit.currentTemp)}°`;
     
     const iconObject = icons();
 
@@ -245,7 +245,7 @@ async function fetchWeatherData(city) {
     sunIcon.src = iconObject[weatherCode];
 
     // ADDITIONAL WEATHER METRICS/IMPERIAL DISPLAY
-    apparentValue.textContent = `${Math.round(weatherObj.weather_data.current.apparent_temperature)}°`;
+    apparentValue.textContent = `${Math.round(temperature_unit.currentApparent)}°`;
     humidityValue.textContent = `${Math.round(weatherObj.weather_data.current.relative_humidity_2m)}%`;
     windValue.textContent = `${Math.round(windSpeed_unit.value)} ${windSpeed_unit.text}`;
     precipitationValue.textContent = `${Math.round(precipitationUnit.value)} ${precipitationUnit.text}`;
@@ -270,6 +270,7 @@ const kmCheckmark = kilometerUnit.querySelector(".km-checkmark");
 const milesCheckmark = milesUnit.querySelector(".miles-checkmark");
 const mmCheckmark = millimeters.querySelector(".mm-checkmark");
 const inchesCheckmark = inches.querySelector(".inches-checkmark");
+const forUnits_btn = unitsContainer.querySelectorAll(".for-units");
 
 function defaultCheckmark() {
   celciusCheckmark.classList.add('checkmark');
@@ -279,6 +280,9 @@ function defaultCheckmark() {
   temperatureCelcius.classList.add('active-units');
   kilometerUnit.classList.add('active-units');
   millimeters.classList.add('active-units');
+  forUnits_btn[0].classList.add('active-units');
+  forUnits_btn[2].classList.add('active-units');
+  forUnits_btn[4].classList.add('active-units');
 }
 
 defaultCheckmark();
@@ -302,9 +306,12 @@ temperatureCelcius.addEventListener("click", () => {
   unitState.tempState = "Celsius";
   fahrenheitCheckmark.classList.remove("checkmark");
   temperatureFahrenheit.classList.remove("active-units");
+  forUnits_btn[1].classList.remove("active-units");
 
   celciusCheckmark.classList.add("checkmark");
   temperatureCelcius.classList.add("active-units");
+  forUnits_btn[0].classList.add("active-units");
+  
   currentWeather();
 })
 // FAHRENHEIT BUTTON 
@@ -312,9 +319,11 @@ temperatureFahrenheit.addEventListener("click", () => {
   unitState.tempState = "Fahrenheit";
   celciusCheckmark.classList.remove("checkmark");
   temperatureCelcius.classList.remove("active-units");
+  forUnits_btn[0].classList.remove('active-units');
 
   fahrenheitCheckmark.classList.add("checkmark");
   temperatureFahrenheit.classList.add("active-units");
+  forUnits_btn[1].classList.add('active-units');
   currentWeather();
 })
 
@@ -322,11 +331,18 @@ temperatureFahrenheit.addEventListener("click", () => {
 function temperature_Unit_Converter() {
 
   const value = weatherObj.weather_data.current.temperature_2m;
+  const apparent_value = weatherObj.weather_data.current.apparent_temperature;
   
    if (unitState.tempState === "Celsius") {
-    return value;
-   } else {
-    return value * 9/5 + 32;
+    return {
+    currentTemp: value,
+    currentApparent: apparent_value
+   }
+  } else {
+    return {
+    currentTemp: value * 9/5 + 32,
+    currentApparent: apparent_value * 9/5 + 32,
+    }
   }
 }
 
@@ -334,9 +350,11 @@ kilometerUnit.addEventListener("click", () => {
   unitState.windSpeed_state = "km/h";
   milesCheckmark.classList.remove("checkmark");
   milesUnit.classList.remove("active-units");
+  forUnits_btn[3].classList.remove('active-units');
 
   kmCheckmark.classList.add("checkmark");
-  kilometerUnit.classList.add("active-units");  
+  kilometerUnit.classList.add("active-units");
+  forUnits_btn[2].classList.add('active-units');  
   currentWeather();
 })
 
@@ -344,9 +362,11 @@ milesUnit.addEventListener("click", () => {
   unitState.windSpeed_state = "mph";
   kmCheckmark.classList.remove("checkmark");
   kilometerUnit.classList.remove("active-units");
+  forUnits_btn[2].classList.remove('active-units');
 
   milesCheckmark.classList.add("checkmark");
   milesUnit.classList.add("active-units");
+  forUnits_btn[3].classList.add('active-units');
   currentWeather();
 })
 // WIND SPEED UNIT CONVERTER 
@@ -370,10 +390,12 @@ function windSpeed_Unit_Converter() {
 millimeters.addEventListener("click", () => {
   unitState.precipitation = "mm";
   inchesCheckmark.classList.remove("checkmark");
-  inches.classList.remove('active-units')
+  inches.classList.remove('active-units');
+  forUnits_btn[5].classList.remove('active-units');
 
   mmCheckmark.classList.add("checkmark");
   millimeters.classList.add("active-units");
+  forUnits_btn[4].classList.add('active-units');
   currentWeather();
 })
 
@@ -382,9 +404,11 @@ inches.addEventListener("click", () => {
   unitState.precipitation = "in";
   mmCheckmark.classList.remove('checkmark');
   millimeters.classList.remove("active-units");
+  forUnits_btn[4].classList.remove('active-units');
 
   inchesCheckmark.classList.add("checkmark");
   inches.classList.add("active-units");
+  forUnits_btn[5].classList.add('active-units');
   currentWeather();
 })
 // PRECIPITATION UNIT CONVERTER 
@@ -421,12 +445,20 @@ imperialBtn.addEventListener("click", () => {
       kilometerUnit.classList.remove('active-units');
       millimeters.classList.remove("active-units");
 
+      forUnits_btn[0].classList.remove('active-units');
+      forUnits_btn[2].classList.remove('active-units');
+      forUnits_btn[4].classList.remove('active-units');
+
       fahrenheitCheckmark.classList.add('checkmark');
       milesCheckmark.classList.add('checkmark');
       inchesCheckmark.classList.add('checkmark');
       temperatureFahrenheit.classList.add("active-units");
       milesUnit.classList.add("active-units");
       inches.classList.add('active-units');
+
+      forUnits_btn[1].classList.add('active-units');
+      forUnits_btn[3].classList.add('active-units');
+      forUnits_btn[5].classList.add('active-units');
 
   } else if (unitSystem === "imperial") {
       unitSystem = "metrics";
@@ -442,12 +474,20 @@ imperialBtn.addEventListener("click", () => {
       milesUnit.classList.remove("active-units");
       inches.classList.remove('active-units');
 
+      forUnits_btn[1].classList.remove('active-units');
+      forUnits_btn[3].classList.remove('active-units');
+      forUnits_btn[5].classList.remove('active-units');
+
       celciusCheckmark.classList.add('checkmark')
       kmCheckmark.classList.add("checkmark")
       mmCheckmark.classList.add('checkmark')
       temperatureCelcius.classList.add('active-units');
       kilometerUnit.classList.add('active-units');
       millimeters.classList.add("active-units");
+
+      forUnits_btn[0].classList.add('active-units');
+      forUnits_btn[2].classList.add('active-units');
+      forUnits_btn[4].classList.add('active-units');
   }
   currentWeather();
 })
